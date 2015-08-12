@@ -2,4 +2,6 @@
 <resources>
     <color name="ColorPrimary">#FF5722</color>
     <color name="ColorPrimaryDark">#A64A19</color>
+    <color name="hot">#FF00FF</color>
+    <color name="cold">#0000FF</color>
 </resources>
