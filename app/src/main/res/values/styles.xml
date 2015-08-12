@@ -6,4 +6,12 @@
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
     </style>
 
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/ColorPrimaryDark</item>
+    </style>
+
+
 </resources>
