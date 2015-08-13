@@ -4,4 +4,5 @@
     <color name="ColorPrimaryDark">#A64A19</color>
     <color name="hot">#FF00FF</color>
     <color name="cold">#0000FF</color>
+    <color name="rip">#00FFFF</color>
 </resources>
