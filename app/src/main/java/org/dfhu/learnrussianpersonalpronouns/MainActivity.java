@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
             ab.setHomeAsUpIndicator(R.mipmap.ic_reorder_24dp);
             ab.setDisplayHomeAsUpEnabled(true);
         }
+
+        setupInfoFragment();
     }
 
     @Override
@@ -46,6 +49,26 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+
+
         return super.onOptionsItemSelected(item);
     }
+
+    private void setupInfoFragment() {
+        View fragmentContainer = findViewById(R.id.fragmentContainer);
+
+        // if this view doesn't have a fragmentContainer return
+        if (fragmentContainer == null) {
+            return;
+        }
+        /*
+        InfoFragment infoFragment = InfoFragment.newInstance("foo", "bar");
+        // pass along any special extras from the intent
+        infoFragment.setArguments(getIntent().getExtras()); */
+
+        CasesRefresherFragment casesFragment = new CasesRefresherFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, casesFragment).commit();
+
+    }
+
 }
