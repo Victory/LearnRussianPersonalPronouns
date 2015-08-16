@@ -61,10 +61,6 @@ public class MainActivity extends AppCompatActivity {
         if (fragmentContainer == null) {
             return;
         }
-        /*
-        InfoFragment infoFragment = InfoFragment.newInstance("foo", "bar");
-        // pass along any special extras from the intent
-        infoFragment.setArguments(getIntent().getExtras()); */
 
         WelcomeFragment fragment = new WelcomeFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, fragment).commit();
