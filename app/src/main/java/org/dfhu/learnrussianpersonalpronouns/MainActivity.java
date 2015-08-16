@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
-        setupInfoFragment();
+        setupWelcomeFragment();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setupInfoFragment() {
+    private void setupWelcomeFragment() {
         View fragmentContainer = findViewById(R.id.fragmentContainer);
 
         // if this view doesn't have a fragmentContainer return
@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         // pass along any special extras from the intent
         infoFragment.setArguments(getIntent().getExtras()); */
 
-        CasesRefresherFragment casesFragment = new CasesRefresherFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, casesFragment).commit();
+        WelcomeFragment fragment = new WelcomeFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, fragment).commit();
 
     }
 
