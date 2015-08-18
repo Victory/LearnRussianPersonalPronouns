@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             ab.setDisplayHomeAsUpEnabled(true);
         }
 
-        setupWelcomeFragment();
+        //setupWelcomeFragment();
     }
 
     @Override
