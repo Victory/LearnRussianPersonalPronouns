@@ -31,12 +31,13 @@ public class DrawerFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,
-                new String[]{
+                android.R.id.text1,               new String[]{
                         "Section 1",
                         "Section 2",
                         "Section 3",
                 });
+        mListView.getBackground().setAlpha(55);
+
         mListView.setAdapter(adapter);
         return mListView;
     }

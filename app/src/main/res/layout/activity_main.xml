@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context="org.dfhu.learnrussianpersonalpronouns.MainActivity">
 
-    <fragment android:id="@+id/navigation_drawer"
-        android:layout_width="@dimen/navigation_drawer_width"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        tools:layout="@layout/welcome_fragment"
-        android:name="org.dfhu.learnrussianpersonalpronouns.DrawerFragment" />
-
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -44,5 +37,12 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true" />
     </RelativeLayout>
+
+    <fragment android:id="@+id/navigation_drawer"
+        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        tools:layout="@layout/welcome_fragment"
+        android:name="org.dfhu.learnrussianpersonalpronouns.DrawerFragment" />
 
 </android.support.v4.widget.DrawerLayout>
