@@ -36,7 +36,6 @@ public class DrawerFragment extends Fragment {
                         "Section 2",
                         "Section 3",
                 });
-        mListView.getBackground().setAlpha(55);
 
         mListView.setAdapter(adapter);
         return mListView;
