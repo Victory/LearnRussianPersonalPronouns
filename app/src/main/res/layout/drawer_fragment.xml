@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     android:choiceMode="singleChoice"
     android:divider="@android:color/holo_blue_bright"
-    android:dividerHeight="10dp"
-    android:background="#FF008833"
+    android:dividerHeight="1dp"
+    android:background="#FFddddee"
     tools:context="org.dfhu.learnrussianpersonalpronouns.DrawerFragment" />
