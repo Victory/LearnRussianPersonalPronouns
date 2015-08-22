@@ -2,10 +2,15 @@ package org.dfhu.learnrussianpersonalpronouns;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,6 +21,7 @@ public class DrawerFragment extends Fragment {
     private View mFragmentContainerView;
     private DrawerLayout mDrawerLayout;
     private ListView mListView;
+    private Toolbar mToolbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,13 +37,15 @@ public class DrawerFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
-                android.R.id.text1,               new String[]{
-                        "Section 1",
-                        "Section 2",
-                        "Section 3",
+                android.R.id.text1,
+                new String[]{
+                        getString(R.string.return_to_home),
+                        getString(R.string.nav_cases_refresher),
+                        getString(R.string.nav_flash_cards),
                 });
 
         mListView.setAdapter(adapter);
+
         return mListView;
     }
 
@@ -50,6 +58,5 @@ public class DrawerFragment extends Fragment {
     public void setUp(int fragmentId, DrawerLayout drawerLayout) {
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
-
     }
 }
