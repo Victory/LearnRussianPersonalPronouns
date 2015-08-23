@@ -7,16 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CasesRefresherFragment extends Fragment {
+public class WhatCaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.cases_referesher_fragment, container, false);
+        return inflater.inflate(R.layout.what_case_fragment, container, false);
     }
 
-    public static CasesRefresherFragment newInstance ()
+    public static WhatCaseFragment newInstance ()
     {
-        return new CasesRefresherFragment();
+        return new WhatCaseFragment();
     }
 }

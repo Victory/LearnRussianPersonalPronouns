@@ -2,22 +2,17 @@ package org.dfhu.learnrussianpersonalpronouns;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
-import java.util.List;
 
 public class DrawerFragment extends Fragment {
 
@@ -58,6 +53,7 @@ public class DrawerFragment extends Fragment {
                         getString(R.string.return_to_home),
                         getString(R.string.nav_cases_refresher),
                         getString(R.string.nav_flash_cards),
+                        getString(R.string.nav_what_case)
                 });
 
 

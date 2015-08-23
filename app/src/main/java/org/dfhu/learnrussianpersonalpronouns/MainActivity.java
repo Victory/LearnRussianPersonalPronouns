@@ -109,6 +109,17 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    private void setupWhatCaseFragment() {
+        View fragmentContainer = findViewById(R.id.fragmentContainer);
+
+        // if this view doesn't have a fragmentContainer return
+        if (fragmentContainer == null) {
+            return;
+        }
+        WhatCaseFragment fragment = WhatCaseFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+    }
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // don't do anything if we are already at the given position
@@ -124,6 +135,11 @@ public class MainActivity extends AppCompatActivity
             case 1:
                 setupCasesFragment();
                 break;
+            case 3:
+                setupWhatCaseFragment();
+                break;
         }
     }
+
+
 }
