@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class DrawerFragment extends Fragment {
     private DrawerLayout mDrawerLayout;
     private ListView mListView;
     private Toolbar mToolbar;
+    private int mCurrentSelectedPosition = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class DrawerFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Log.d("tmp", "postion:" + position);
 
+                selectItem(position);
             }
         });
 
@@ -54,9 +57,23 @@ public class DrawerFragment extends Fragment {
                         getString(R.string.nav_flash_cards),
                 });
 
+
         mListView.setAdapter(adapter);
 
         return mListView;
+    }
+
+    private void selectItem(int position) {
+        mCurrentSelectedPosition = position;
+
+        if (mListView != null) {
+            mListView.setItemChecked(position, true);
+        }
+
+        if (mDrawerLayout != null) {
+            mDrawerLayout.closeDrawer(mFragmentContainerView);
+        }
+
     }
 
     /**
