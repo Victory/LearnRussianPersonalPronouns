@@ -1,6 +1,7 @@
 package org.dfhu.learnrussianpersonalpronouns;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.support.v4.widget.DrawerLayout;
@@ -33,6 +34,15 @@ public class DrawerFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mListView = (ListView) inflater.inflate(R.layout.drawer_fragment, container, false);
+
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Log.d("tmp", "postion:" + position);
+
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getActivity(),
