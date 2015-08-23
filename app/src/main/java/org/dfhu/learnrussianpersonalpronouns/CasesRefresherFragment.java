@@ -14,4 +14,9 @@ public class CasesRefresherFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cases_referesher, container, false);
     }
+
+    public static CasesRefresherFragment newInstance ()
+    {
+        return new CasesRefresherFragment();
+    }
 }

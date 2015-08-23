@@ -1,5 +1,6 @@
 package org.dfhu.learnrussianpersonalpronouns;
 
+import android.app.Activity;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,10 +13,12 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements DrawerFragment.NavigationDrawerCallbacks {
 
     private Toolbar mToolbar;
     private DrawerFragment mDrawerFragment;
+    private int mFragmentPosition = 0; // the top of the drawer is the initial position
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         setUpDrawerToggle();
+
+        setupWelcomeFragment();
     }
 
     private void setUpDrawerToggle() {
@@ -85,11 +90,40 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        WelcomeFragment fragment = new WelcomeFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer, fragment).commit();
+        WelcomeFragment fragment = WelcomeFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+
+    }
+
+    private void setupCasesFragment() {
+        View fragmentContainer = findViewById(R.id.fragmentContainer);
+
+        // if this view doesn't have a fragmentContainer return
+        if (fragmentContainer == null) {
+            return;
+        }
+
+        CasesRefresherFragment fragment = CasesRefresherFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
 
     }
 
 
+    @Override
+    public void onNavigationDrawerItemSelected(int position) {
+        // don't do anything if we are already at the given position
+        if (position == mFragmentPosition) {
+            return;
+        }
+        mFragmentPosition = position;
 
+        switch (position) {
+            case 0:
+                setupWelcomeFragment();
+                break;
+            case 1:
+                setupCasesFragment();
+                break;
+        }
+    }
 }

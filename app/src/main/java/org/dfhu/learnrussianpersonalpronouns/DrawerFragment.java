@@ -1,5 +1,6 @@
 package org.dfhu.learnrussianpersonalpronouns;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -25,6 +26,8 @@ public class DrawerFragment extends Fragment {
     private ListView mListView;
     private Toolbar mToolbar;
     private int mCurrentSelectedPosition = 0;
+
+    private NavigationDrawerCallbacks mCallbacks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +77,10 @@ public class DrawerFragment extends Fragment {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
 
+        if (mCallbacks != null) {
+            mCallbacks.onNavigationDrawerItemSelected(position);
+        }
+
     }
 
     /**
@@ -85,5 +92,26 @@ public class DrawerFragment extends Fragment {
     public void setUp(int fragmentId, DrawerLayout drawerLayout) {
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
+    }
+
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mCallbacks = (DrawerFragment.NavigationDrawerCallbacks) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException("Activity must implement NavigationDrawerCallbacks.");
+        }
+    }
+
+    /**
+     * Callbacks interface that all activities using this fragment must implement.
+     */
+    public interface NavigationDrawerCallbacks {
+        /**
+         * Called when an item in the navigation drawer is selected.
+         */
+        void onNavigationDrawerItemSelected(int position);
     }
 }

@@ -16,13 +16,12 @@
             android:id="@+id/myToolbar"
             layout="@layout/toolbar" />
 
-        <fragment
+        <FrameLayout
             android:id="@+id/fragmentContainer"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_below="@+id/myToolbar"
-            android:name="org.dfhu.learnrussianpersonalpronouns.WelcomeFragment"
-            tools:layout="@layout/welcome_fragment" />
+            tools:layout="@layout/welcome_fragment"
+            android:layout_height="wrap_content" />
 
         <com.melnykov.fab.FloatingActionButton
             android:id="@+id/fab"
