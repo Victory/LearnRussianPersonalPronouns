@@ -9,4 +9,58 @@
         android:text="What Case?"
         android:id="@+id/textView16"
         android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textTargetKeyword"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/cold"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Nominative"
+        android:id="@+id/buttonNominative"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Accusative"
+        android:id="@+id/buttonAccusative"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Genitive"
+        android:id="@+id/buttonGenitive"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Dative"
+        android:id="@+id/buttonDative"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Instrumental"
+        android:id="@+id/buttonInstrumental"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Prepositional"
+        android:id="@+id/buttonPrepositional"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
