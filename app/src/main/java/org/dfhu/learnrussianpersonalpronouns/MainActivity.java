@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity
 
     private Toolbar mToolbar;
     private DrawerFragment mDrawerFragment;
-    private int mFragmentPosition = 0; // the top of the drawer is the initial position
+    private static int mFragmentPosition = 0; // the top of the drawer is the initial position
     private ActionBarDrawerToggle mDrawerToggle;
 
     @Override
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
 
         setUpDrawer();
 
-        selectFragment(mFragmentPosition);
+        selectFragment();
     }
 
     private void setUpDrawer() {
@@ -125,13 +125,12 @@ public class MainActivity extends AppCompatActivity
         if (position == mFragmentPosition) {
             return;
         }
-        selectFragment(position);
+        mFragmentPosition = position;
+        selectFragment();
     }
 
-    private void selectFragment(int position) {
-        mFragmentPosition = position;
-
-        switch (position) {
+    private void selectFragment() {
+        switch (mFragmentPosition) {
             case 0:
                 setupWelcomeFragment();
                 break;
