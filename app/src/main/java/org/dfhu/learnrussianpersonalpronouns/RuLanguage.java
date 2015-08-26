@@ -24,9 +24,10 @@ public class RuLanguage {
         if (words != null) {
             return;
         }
-         words = new ArrayList<>();
-         words.add(new RuWord("Я", "Nominative", "1st"));
-         words.add(new RuWord("Меня", "Accusative", "1st"));
+
+        words = new ArrayList<>();
+        words.add(new RuWord("Я", RuCase.NOM, "1st"));
+        words.add(new RuWord("Меня", RuCase.ACU, "1st"));
     }
 
 

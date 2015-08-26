@@ -14,36 +14,44 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
     private static RuWord ruWord;
     private static boolean foundTarget = true;
+    private View theView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.what_case_fragment, container, false);
+        theView = inflater.inflate(R.layout.what_case_fragment, container, false);
 
-        view.findViewById(R.id.buttonNominative).setOnClickListener(this);
-        view.findViewById(R.id.buttonAccusative).setOnClickListener(this);
-        view.findViewById(R.id.buttonGenitive).setOnClickListener(this);
-        view.findViewById(R.id.buttonDative).setOnClickListener(this);
-        view.findViewById(R.id.buttonInstrumental).setOnClickListener(this);
-        view.findViewById(R.id.buttonPrepositional).setOnClickListener(this);
-
-        TextView target = (TextView) view.findViewById(R.id.textTargetKeyword);
+        theView.findViewById(R.id.buttonNominative).setOnClickListener(this);
+        theView.findViewById(R.id.buttonAccusative).setOnClickListener(this);
+        theView.findViewById(R.id.buttonGenitive).setOnClickListener(this);
+        theView.findViewById(R.id.buttonDative).setOnClickListener(this);
+        theView.findViewById(R.id.buttonInstrumental).setOnClickListener(this);
+        theView.findViewById(R.id.buttonPrepositional).setOnClickListener(this);
 
         if (foundTarget) {
             foundTarget = false;
-            ruWord = RuLanguage.getRandomWord();
-            target.setText(ruWord.getWord());
+            setNewWord(theView);
         } else {
-            target.setText(ruWord.getWord());
+            setWord(theView);
         }
 
-        return view;
+        return theView;
     }
 
     public static WhatCaseFragment newInstance ()
     {
         return new WhatCaseFragment();
+    }
+
+    private void setWord (View view) {
+        TextView target = (TextView) view.findViewById(R.id.textTargetKeyword);
+        target.setText(ruWord.getWord());
+    }
+
+    private void setNewWord (View view) {
+        ruWord = RuLanguage.getRandomWord();
+        setWord(view);
     }
 
     @Override
@@ -52,8 +60,21 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
         Log.d("tmp", "clicked a case");
         switch(view.getId()) {
             case R.id.buttonNominative:
-                Toast.makeText(getActivity(), "Nominative", Toast.LENGTH_SHORT).show();
+                foundTarget = RuCase.isCase(ruWord, RuCase.NOM);
                 break;
+            case R.id.buttonAccusative:
+                foundTarget = RuCase.isCase(ruWord, RuCase.ACU);
+                break;
+            default:
+                foundTarget = false;
+
+        }
+
+        if (foundTarget) {
+            Toast.makeText(getActivity(), "Yup " + ruWord.getCase(), Toast.LENGTH_SHORT).show();
+            setNewWord(theView);
+        } else {
+            Toast.makeText(getActivity(), "Sorry try again", Toast.LENGTH_SHORT).show();
         }
     }
 
