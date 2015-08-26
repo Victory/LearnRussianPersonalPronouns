@@ -7,10 +7,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WhatCaseFragment extends Fragment implements View.OnClickListener {
+
+    private static RuWord ruWord;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -23,6 +26,11 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
         view.findViewById(R.id.buttonDative).setOnClickListener(this);
         view.findViewById(R.id.buttonInstrumental).setOnClickListener(this);
         view.findViewById(R.id.buttonPrepositional).setOnClickListener(this);
+
+        TextView target = (TextView) view.findViewById(R.id.textTargetKeyword);
+
+        ruWord = RuLanguage.getRandomWord();
+        target.setText(ruWord.getWord());
 
         return view;
     }
@@ -41,4 +49,5 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
 }

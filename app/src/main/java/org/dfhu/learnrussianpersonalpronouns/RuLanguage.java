@@ -7,15 +7,26 @@ import java.util.List;
  * this will be mocked with a POJO
  */
 public class RuLanguage {
-    private List<RuWord> words = new ArrayList<>();
+    private static List<RuWord> words;
 
-    public RuLanguage () {
-        words.add(new RuWord("Я", "Nominative", "1st"));
-        words.add(new RuWord("Меня", "Accusative", "1st"));
+    private RuLanguage () {}
+
+    public static RuWord getRandomWord () {
+        setUpWords();
+
+        return words.get((int) (Math.random() * words.size()));
     }
 
-    public RuWord getRandomWord () {
-        return words.get((int) (Math.random() * words.size()));
+    /**
+     * initializes the words if they have not been already
+     */
+    private static void setUpWords () {
+        if (words != null) {
+            return;
+        }
+         words = new ArrayList<>();
+         words.add(new RuWord("Я", "Nominative", "1st"));
+         words.add(new RuWord("Меня", "Accusative", "1st"));
     }
 
 
