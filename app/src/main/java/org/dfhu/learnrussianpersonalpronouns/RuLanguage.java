@@ -28,6 +28,10 @@ public class RuLanguage {
         words = new ArrayList<>();
         words.add(new RuWord("Я", RuCase.NOM, "1st"));
         words.add(new RuWord("Меня", RuCase.ACU, "1st"));
+        words.add(new RuWord("Моего", RuCase.GEN, "1st"));
+        words.add(new RuWord("Моему", RuCase.DAT, "1st"));
+        words.add(new RuWord("Моим", RuCase.INS, "1st"));
+        words.add(new RuWord("Моём", RuCase.PRE, "1st"));
     }
 
 

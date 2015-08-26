@@ -65,6 +65,18 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
             case R.id.buttonAccusative:
                 foundTarget = RuCase.isCase(ruWord, RuCase.ACU);
                 break;
+            case R.id.buttonGenitive:
+                foundTarget = RuCase.isCase(ruWord, RuCase.GEN);
+                break;
+            case R.id.buttonDative:
+                foundTarget = RuCase.isCase(ruWord, RuCase.DAT);
+                break;
+            case R.id.buttonInstrumental:
+                foundTarget = RuCase.isCase(ruWord, RuCase.INS);
+                break;
+            case R.id.buttonPrepositional:
+                foundTarget = RuCase.isCase(ruWord, RuCase.PRE);
+                break;
             default:
                 foundTarget = false;
 
