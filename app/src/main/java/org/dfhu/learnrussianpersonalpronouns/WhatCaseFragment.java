@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
     private static RuWord ruWord;
+    private static boolean foundTarget = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -29,8 +30,13 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
         TextView target = (TextView) view.findViewById(R.id.textTargetKeyword);
 
-        ruWord = RuLanguage.getRandomWord();
-        target.setText(ruWord.getWord());
+        if (foundTarget) {
+            foundTarget = false;
+            ruWord = RuLanguage.getRandomWord();
+            target.setText(ruWord.getWord());
+        } else {
+            target.setText(ruWord.getWord());
+        }
 
         return view;
     }
@@ -42,6 +48,7 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        foundTarget = true;
         Log.d("tmp", "clicked a case");
         switch(view.getId()) {
             case R.id.buttonNominative:
