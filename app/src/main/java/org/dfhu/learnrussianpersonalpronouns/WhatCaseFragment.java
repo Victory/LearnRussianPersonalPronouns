@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
-    private static RuWord ruWord;
+    private static RuPronoun ruWord;
     private static boolean foundTarget = true;
     private View theView;
 
@@ -50,7 +50,7 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setNewWord (View view) {
-        ruWord = RuLanguage.getRandomWord();
+        ruWord = (RuPronoun) RuLanguage.getRandomWord();
         setWord(view);
     }
 
@@ -83,7 +83,10 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
         }
 
         if (foundTarget) {
-            Toast.makeText(getActivity(), "Yup " + ruWord.getCase(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),
+                    "Yup '" + ruWord.getWord() + "' is " + ruWord.getCase() + ", " + ruWord.getType(),
+                    Toast.LENGTH_SHORT).show();
+
             setNewWord(theView);
         } else {
             Toast.makeText(getActivity(), "Sorry try again", Toast.LENGTH_SHORT).show();
