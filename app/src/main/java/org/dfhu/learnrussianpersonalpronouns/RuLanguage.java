@@ -26,12 +26,12 @@ public class RuLanguage {
         }
 
         words = new ArrayList<>();
-        words.add(new RuPronoun("Я", RuCase.NOM, "1st", RuPronoun.SING));
-        words.add(new RuPronoun("Меня", RuCase.ACU, "1st", RuPronoun.SING));
-        words.add(new RuPronoun("Моего", RuCase.GEN, "1st", RuPronoun.SING_POSS));
-        words.add(new RuPronoun("Моему", RuCase.DAT, "1st", RuPronoun.SING_POSS));
-        words.add(new RuPronoun("Моим", RuCase.INS, "1st", RuPronoun.SING_POSS));
-        words.add(new RuPronoun("Моём", RuCase.PRE, "1st", RuPronoun.SING_POSS));
+        words.add(new RuPronoun("Я", RuCase.NOM, "1st", RuPronoun.SING, RuGender.MAS));
+        words.add(new RuPronoun("Меня", RuCase.ACU, "1st", RuPronoun.SING, RuGender.MAS));
+        words.add(new RuPronoun("Моего", RuCase.GEN, "1st", RuPronoun.SING_POSS, RuGender.MAS));
+        words.add(new RuPronoun("Моему", RuCase.DAT, "1st", RuPronoun.SING_POSS, RuGender.MAS));
+        words.add(new RuPronoun("Моим", RuCase.INS, "1st", RuPronoun.SING_POSS, RuGender.MAS));
+        words.add(new RuPronoun("Моём", RuCase.PRE, "1st", RuPronoun.SING_POSS, RuGender.MAS));
     }
 
 

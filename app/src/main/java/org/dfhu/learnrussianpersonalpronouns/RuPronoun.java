@@ -14,8 +14,8 @@ public class RuPronoun extends RuWord {
     public static final String DETER = "Determinative";
     public static final String INTERR = "Interrogative";
 
-    public RuPronoun(String theWord, String theCase, String thePOV, String theType) {
-        super(theWord, theCase, thePOV);
+    public RuPronoun(String theWord, String theCase, String thePOV, String theType, String theGender) {
+        super(theWord, theCase, thePOV, theGender);
         this.theType = theType;
     }
 

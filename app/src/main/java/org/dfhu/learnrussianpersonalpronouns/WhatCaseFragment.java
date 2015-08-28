@@ -84,7 +84,7 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
         if (foundTarget) {
             Toast.makeText(getActivity(),
-                    "Yup '" + ruWord.getWord() + "' is " + ruWord.getCase() + ", " + ruWord.getType(),
+                    "Yup '" + ruWord.getWord() + "' is " + ruWord.getCase() + ", " + ruWord.getType() + ", " + ruWord.getGender(),
                     Toast.LENGTH_SHORT).show();
 
             setNewWord(theView);
