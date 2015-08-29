@@ -1,4 +1,4 @@
-package org.dfhu.learnrussianpersonalpronouns;
+package org.dfhu.rulanguage;
 
 /**
  * POJO for gender

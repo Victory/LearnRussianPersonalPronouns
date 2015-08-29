@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.dfhu.rulanguage.RuCase;
+import org.dfhu.rulanguage.RuLanguage;
+import org.dfhu.rulanguage.RuPronoun;
+
 public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
     private static RuPronoun ruWord;

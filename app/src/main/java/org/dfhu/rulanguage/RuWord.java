@@ -1,4 +1,4 @@
-package org.dfhu.learnrussianpersonalpronouns;
+package org.dfhu.rulanguage;
 
 /**
  * mocked with a POJO

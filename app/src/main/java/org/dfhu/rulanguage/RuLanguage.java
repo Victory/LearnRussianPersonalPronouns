@@ -1,4 +1,4 @@
-package org.dfhu.learnrussianpersonalpronouns;
+package org.dfhu.rulanguage;
 
 import java.util.ArrayList;
 import java.util.List;

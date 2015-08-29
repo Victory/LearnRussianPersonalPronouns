@@ -1,4 +1,4 @@
-package org.dfhu.learnrussianpersonalpronouns;
+package org.dfhu.rulanguage;
 
 public class RuPronoun extends RuWord {
     private String theType;
