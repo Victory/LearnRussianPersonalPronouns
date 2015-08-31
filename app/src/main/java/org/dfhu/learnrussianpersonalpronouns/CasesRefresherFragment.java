@@ -18,8 +18,8 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
         theView = inflater.inflate(R.layout.cases_referesher_fragment, container, false);
 
         theView.findViewById(R.id.buttonNominativeInfo).setOnClickListener(this);
+        theView.findViewById(R.id.buttonAccusativeInfo).setOnClickListener(this);
         /*
-        theView.findViewById(R.id.buttonAccusative).setOnClickListener(this);
         theView.findViewById(R.id.buttonGenitive).setOnClickListener(this);
         theView.findViewById(R.id.buttonDative).setOnClickListener(this);
         theView.findViewById(R.id.buttonInstrumental).setOnClickListener(this);
@@ -39,11 +39,22 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
 
         switch(view.getId()) {
             case R.id.buttonNominativeInfo:
-                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle(R.string.nominativeCaseTitle);
-                AlertDialog dialog = builder.create();
-                dialog.show();
+                showCaseInfo(R.string.nominativeCaseTitle, R.layout.case_info_nom);
+                break;
+            case R.id.buttonAccusativeInfo:
+                showCaseInfo(R.string.accusativeCaseTitle, R.layout.case_info_accu);
                 break;
         }
+    }
+
+    private void showCaseInfo(int caseTitleId, int caseLayoutId) {
+
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle(caseTitleId);
+        builder.setView(inflater.inflate(caseLayoutId, null));
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
