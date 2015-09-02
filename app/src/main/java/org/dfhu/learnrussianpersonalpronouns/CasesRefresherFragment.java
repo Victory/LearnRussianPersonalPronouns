@@ -7,9 +7,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 public class CasesRefresherFragment extends Fragment implements View.OnClickListener {
     private View theView;
+
+    private int[] buttonIds = new int[] {
+            R.id.buttonNominativeInfo,
+            R.id.buttonAccusativeInfo,
+            R.id.buttonGenitiveInfo,
+            R.id.buttonDativeInfo,
+            R.id.buttonInstrumentalInfo,
+            R.id.buttonPrepositionalInfo
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -17,15 +27,9 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
 
         theView = inflater.inflate(R.layout.cases_referesher_fragment, container, false);
 
-        theView.findViewById(R.id.buttonNominativeInfo).setOnClickListener(this);
-        theView.findViewById(R.id.buttonAccusativeInfo).setOnClickListener(this);
-        /*
-        theView.findViewById(R.id.buttonGenitive).setOnClickListener(this);
-        theView.findViewById(R.id.buttonDative).setOnClickListener(this);
-        theView.findViewById(R.id.buttonInstrumental).setOnClickListener(this);
-        theView.findViewById(R.id.buttonPrepositional).setOnClickListener(this);
-        */
-
+        for (int buttonId: buttonIds) {
+            theView.findViewById(buttonId).setOnClickListener(this);
+        }
         return theView;
     }
 
@@ -43,6 +47,9 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
                 break;
             case R.id.buttonAccusativeInfo:
                 showCaseInfo(R.string.accusativeCaseTitle, R.layout.case_info_accu);
+                break;
+            default:
+                Toast.makeText(getActivity(), "Not implemented", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
