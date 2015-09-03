@@ -5,4 +5,6 @@
     <color name="hot">#FF00FF</color>
     <color name="cold">#0000FF</color>
     <color name="rip">#00FFFF</color>
+
+    <color name="genderTitle">#000088</color>
 </resources>

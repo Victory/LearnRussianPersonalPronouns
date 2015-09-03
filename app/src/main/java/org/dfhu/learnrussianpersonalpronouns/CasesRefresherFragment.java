@@ -2,6 +2,7 @@ package org.dfhu.learnrussianpersonalpronouns;
 
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -43,11 +44,13 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
 
         switch(view.getId()) {
             case R.id.buttonNominativeInfo:
-                showCaseInfo(R.string.nominativeCaseTitle, R.layout.case_info_nom);
+                showCaseInfo(R.string.nominative_case_title, R.layout.case_info_nom);
                 break;
             case R.id.buttonAccusativeInfo:
-                showCaseInfo(R.string.accusativeCaseTitle, R.layout.case_info_accu);
+                showCaseInfo(R.string.accusative_case_title, R.layout.case_info_accu);
                 break;
+            case R.id.buttonGenitiveInfo:
+                showCaseInfo(R.string.genetive_case_title, R.layout.case_info_gen);
             default:
                 Toast.makeText(getActivity(), "Not implemented", Toast.LENGTH_SHORT).show();
                 break;
@@ -61,7 +64,14 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(caseTitleId);
         builder.setView(inflater.inflate(caseLayoutId, null));
+        builder.setPositiveButton(R.string.gotit, new IgnoreListener());
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private class IgnoreListener implements DialogInterface.OnClickListener {
+        @Override
+        public void onClick(DialogInterface dialogInterface, int i) {
+        }
     }
 }

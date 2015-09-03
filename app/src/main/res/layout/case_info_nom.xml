@@ -19,7 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Masculine"
         android:id="@+id/textView20"
-        android:textColor="#000088" />
+        android:textColor="@color/genderTitle" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Feminine"
         android:id="@+id/textView23"
-        android:textColor="#000088" />
+        android:textColor="@color/genderTitle" />
 
     <TextView
         android:layout_width="wrap_content"
