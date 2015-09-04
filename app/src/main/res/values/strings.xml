@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Russian Personal Pronouns</string>
-
-    <string name="hello_world">Hello Toolbar World!</string>
     <string name="action_settings">Settings</string>
     <string name="return_to_home">Home</string>
 
@@ -10,7 +8,7 @@
     <string name="nav_what_case">What case?</string>
 
     <string name="nominative_case_title">The Nominative Case</string>
-    <string name="nom_masc_consonants">If it ends in consant use ы</string>
+    <string name="nom_masc_consonants">If it ends in consonant use ы</string>
     <string name="nom_masc_ee"><![CDATA[ending “й” -> “и”]]></string>
     <string name="nom_masc_soft"><![CDATA[ending “ь” -> “и”]]></string>
 
@@ -18,7 +16,7 @@
 
     <string name="accusative_case_title">The Accusative Case</string>
 
-    <string name="genetive_case_title">The Genitive Case</string>
+    <string name="genitive_case_title">The Genitive Case</string>
 
     <string name="gotit">I Understand</string>
 </resources>

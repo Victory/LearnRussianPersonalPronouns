@@ -50,7 +50,7 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
                 showCaseInfo(R.string.accusative_case_title, R.layout.case_info_accu);
                 break;
             case R.id.buttonGenitiveInfo:
-                showCaseInfo(R.string.genetive_case_title, R.layout.case_info_gen);
+                showCaseInfo(R.string.genitive_case_title, R.layout.case_info_gen);
             default:
                 Toast.makeText(getActivity(), "Not implemented", Toast.LENGTH_SHORT).show();
                 break;
