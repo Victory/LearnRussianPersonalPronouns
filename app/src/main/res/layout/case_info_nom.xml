@@ -54,28 +54,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="ending “я” -> “и”"
+        android:text="ending “я” --> “и”"
         android:id="@+id/textView24" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="ending “ь” -> “и”"
+        android:text="ending “ь” --> “и”"
         android:id="@+id/textView25" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="ending “а” -> “ы”"
+        android:text="ending “а” --> “ы”"
         android:id="@+id/textView26" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=" * if previous Г, К, Х, Ж, Ч, Ш, Щ -> &quot;и&quot;"
+        android:text=" * if previous Г, К, Х, Ж, Ч, Ш, Щ --> &quot;и&quot;"
         android:id="@+id/textView27" />
 
 

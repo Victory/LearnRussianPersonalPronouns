@@ -9,8 +9,8 @@
 
     <string name="nominative_case_title">The Nominative Case</string>
     <string name="nom_masc_consonants">If it ends in consonant use ы</string>
-    <string name="nom_masc_ee"><![CDATA[ending “й” -> “и”]]></string>
-    <string name="nom_masc_soft"><![CDATA[ending “ь” -> “и”]]></string>
+    <string name="nom_masc_ee"><![CDATA[ending “й” --> “и”]]></string>
+    <string name="nom_masc_soft"><![CDATA[ending “ь” --> “и”]]></string>
 
     <string name="nom_only_change_for_plural">Only change for plural</string>
 

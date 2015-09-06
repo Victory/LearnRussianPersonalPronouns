@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="“ь” -> “я”"
+        android:text="“ь” --> “я”"
         android:id="@+id/textView30" />
 
     <TextView
@@ -53,14 +53,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="“а” -> “у”"
+        android:text="“а” --> “у”"
         android:id="@+id/textView31" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="“я” -> “ю”"
+        android:text="“я” --> “ю”"
         android:id="@+id/textView32" />
 
     <TextView

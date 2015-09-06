@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.util.Collections;
+
 public class CasesRefresherFragment extends Fragment implements View.OnClickListener {
     private View theView;
 
@@ -58,7 +60,6 @@ public class CasesRefresherFragment extends Fragment implements View.OnClickList
     }
 
     private void showCaseInfo(int caseTitleId, int caseLayoutId) {
-
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
