@@ -120,6 +120,18 @@ public class MainActivity extends AppCompatActivity
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
     }
 
+
+    private void setUpFlashCardsFragment() {
+        View fragmentContainer = findViewById(R.id.fragmentContainer);
+        if (fragmentContainer == null) {
+            return;
+        }
+
+        FlashCardsFragment fragment = FlashCardsFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, fragment).commit();
+    }
+
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // don't do anything if we are already at the given position
@@ -137,6 +149,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case 1:
                 setupCasesFragment();
+                break;
+            case 2:
+                setUpFlashCardsFragment();
                 break;
             case 3:
                 setupWhatCaseFragment();
