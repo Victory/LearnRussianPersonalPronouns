@@ -19,4 +19,7 @@
     <string name="genitive_case_title">The Genitive Case</string>
 
     <string name="gotit">I Understand</string>
+    <string name="dative_case_title">Dative Case</string>
+    <string name="instrumental_case_title">Instrumental Case</string>
+    <string name="prepositional_case_title">Prepositional Case</string>
 </resources>
