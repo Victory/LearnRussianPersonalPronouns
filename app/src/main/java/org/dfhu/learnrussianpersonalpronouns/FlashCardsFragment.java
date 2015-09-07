@@ -15,12 +15,16 @@ import android.widget.TextView;
 import org.dfhu.rulanguage.RuLanguage;
 import org.dfhu.rulanguage.RuPronoun;
 
+import java.util.Date;
+
 
 public class FlashCardsFragment extends Fragment {
 
     private View theView;
     private static RuPronoun ruWord;
     private Boolean isFrontView = true;
+
+    private static long nextValidClick = new Date().getTime();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +46,16 @@ public class FlashCardsFragment extends Fragment {
         clicky.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // thwart fast clickers
+                long now = new Date().getTime();
+                if (now < nextValidClick) {
+                    return;
+                } else {
+                    nextValidClick =
+                            now + getResources().getInteger(R.integer.card_flip_time_full) / 3;
+                }
+
                 if (isFrontView) {
                     flipCard();
                 } else {

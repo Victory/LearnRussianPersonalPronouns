@@ -19,28 +19,4 @@
         android:layout_gravity="start"
         />
 
-
-    <!--
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/buttonFlashCard"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textFlashCardAnswer"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:background="#ddddff"
-        android:textColor="#000033"
-        android:padding="80dp"
-        />
-        -->
-
-
 </LinearLayout>
