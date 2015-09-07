@@ -28,6 +28,18 @@ public class FlashCardsFragment extends Fragment implements View.OnClickListener
         theButton = (Button) theView.findViewById(R.id.buttonFlashCard);
         theButton.setOnClickListener(FlashCardsFragment.this);
         flashCardAnswer = (TextView) theView.findViewById(R.id.textFlashCardAnswer);
+        flashCardAnswer.setVisibility(View.GONE);
+
+        flashCardAnswer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                flashCardAnswer.setVisibility(View.GONE);
+
+                ruWord = (RuPronoun) RuLanguage.getRandomWord();
+                theButton.setText(ruWord.getWord());
+                theButton.setVisibility(View.VISIBLE);
+            }
+        });
 
         ruWord = (RuPronoun) RuLanguage.getRandomWord();
 
@@ -38,13 +50,10 @@ public class FlashCardsFragment extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
-
         String msg = "Case: " + ruWord.getCase();
         flashCardAnswer.setText(msg);
-
-        theButton = (Button) view.findViewById(R.id.buttonFlashCard);
-        ruWord = (RuPronoun) RuLanguage.getRandomWord();
-        theButton.setText(ruWord.getWord());
+        flashCardAnswer.setVisibility(View.VISIBLE);
+        theButton.setVisibility(View.GONE);
     }
 
     public static FlashCardsFragment newInstance() {

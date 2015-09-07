@@ -25,7 +25,11 @@
         android:text="New Text"
         android:id="@+id/textFlashCardAnswer"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="50dp"
+        android:background="#ddddff"
+        android:textColor="#000033"
+        android:padding="80dp"
+        />
 
 
 </LinearLayout>
