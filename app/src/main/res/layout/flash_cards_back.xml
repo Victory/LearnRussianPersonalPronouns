@@ -11,7 +11,7 @@
         android:id="@+id/flashCardBack"
         android:layout_gravity="center_horizontal"
         android:padding="50dp"
-        android:background="@color/cold"
+        android:background="@color/ColorPrimaryDark"
         android:layout_marginTop="30dp"
         />
 </LinearLayout>
