@@ -35,9 +35,9 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
         if (foundTarget) {
             foundTarget = false;
-            setNewWord(theView);
+            setNewWord();
         } else {
-            setWord(theView);
+            setWord();
         }
 
         return theView;
@@ -48,14 +48,14 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
         return new WhatCaseFragment();
     }
 
-    private void setWord (View view) {
-        TextView target = (TextView) view.findViewById(R.id.textTargetKeyword);
+    private void setWord () {
+        TextView target = (TextView) theView.findViewById(R.id.textTargetKeyword);
         target.setText(ruWord.getWord());
     }
 
-    private void setNewWord (View view) {
+    private void setNewWord () {
         ruWord = (RuPronoun) RuLanguage.getRandomWord();
-        setWord(view);
+        setWord();
     }
 
     @Override
@@ -91,7 +91,7 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
                     "Yup '" + ruWord.getWord() + "' is " + ruWord.getCase() + ", " + ruWord.getType() + ", " + ruWord.getGender(),
                     Toast.LENGTH_SHORT).show();
 
-            setNewWord(theView);
+            setNewWord();
         } else {
             Toast.makeText(getActivity(), "Sorry try again", Toast.LENGTH_SHORT).show();
         }
