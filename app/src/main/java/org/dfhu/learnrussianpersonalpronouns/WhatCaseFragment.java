@@ -2,6 +2,8 @@ package org.dfhu.learnrussianpersonalpronouns;
 
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -87,14 +89,18 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
         }
 
         if (foundTarget) {
-            Toast.makeText(getActivity(),
-                    "Yup '" + ruWord.getWord() + "' is " + ruWord.getCase() + ", " + ruWord.getType() + ", " + ruWord.getGender(),
-                    Toast.LENGTH_SHORT).show();
+            String msg = "Yup '" + ruWord.getWord() + "' is " + ruWord.getCase() + ", " + ruWord.getType() + ", " + ruWord.getGender();
+            CoordinatorLayout layout = (CoordinatorLayout) theView.findViewById(R.id.casesSnackbarPosition);
+
+            Snackbar snackbar = Snackbar.make(
+                    layout, msg, Snackbar.LENGTH_LONG);
+            snackbar.show();
 
             setNewWord();
         } else {
             Toast.makeText(getActivity(), "Sorry try again", Toast.LENGTH_SHORT).show();
         }
     }
+
 
 }

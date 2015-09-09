@@ -63,4 +63,12 @@
         android:id="@+id/buttonPrepositional"
         android:layout_gravity="center_horizontal" />
 
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/casesSnackbarPosition">
+    </android.support.design.widget.CoordinatorLayout>
+
 </LinearLayout>
