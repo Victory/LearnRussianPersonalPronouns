@@ -4,14 +4,14 @@ package org.dfhu.rulanguage;
 /**
  * attaches a keyword and phrase
  */
-public class RuPhrases {
+public class RuPhrase {
 
 
     private String phrase;
     private RuWord keyWord;
     private String english;
 
-    RuPhrases (String phrase, String english, RuWord keyWord) {
+    RuPhrase(String phrase, String english, RuWord keyWord) {
         this.phrase = phrase;
         this.keyWord = keyWord;
         this.english = english;

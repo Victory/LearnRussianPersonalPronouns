@@ -8,20 +8,26 @@ import java.util.List;
  */
 public class RuLanguage {
     private static List<RuWord> words;
-    private static List<RuPhrases> phrases;
+    private static List<RuPhrase> phrases;
 
     private RuLanguage () {}
 
     public static RuWord getRandomWord () {
-        setUpWords();
+        setUpWordsAndPhrases();
 
         return words.get((int) (Math.random() * words.size()));
+    }
+
+    public static RuPhrase getRandomPhrase () {
+        setUpWordsAndPhrases();
+
+        return phrases.get((int) (Math.random() * words.size()));
     }
 
     /**
      * initializes the words if they have not been already
      */
-    private static void setUpWords () {
+    private static void setUpWordsAndPhrases() {
         if (words != null) {
             return;
         }
@@ -30,10 +36,10 @@ public class RuLanguage {
         phrases = new ArrayList<>();
         RuPronoun I = new RuPronoun("Я", RuCase.NOM, "1st", RuPronoun.SING, RuGender.NA);
         words.add(I);
-        phrases.add(new RuPhrases("я знаю", "I know", I));
+        phrases.add(new RuPhrase("я знаю", "I know", I));
         RuPronoun toMe = new RuPronoun("Меня", RuCase.ACU, "1st", RuPronoun.SING, RuGender.NA);
         words.add(toMe);
-        phrases.add(new RuPhrases("Мне нравится рыба", "I like fish", toMe));
+        phrases.add(new RuPhrase("Мне нравится рыба", "I like fish", toMe));
 
         words.add(new RuPronoun("Меня", RuCase.GEN, "1st", RuPronoun.SING, RuGender.NA));
         words.add(new RuPronoun("Мне", RuCase.DAT, "1st", RuPronoun.SING, RuGender.NA));
