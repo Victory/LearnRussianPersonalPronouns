@@ -27,6 +27,7 @@ public class RuLanguage {
         }
 
         words = new ArrayList<>();
+        phrases = new ArrayList<>();
         RuPronoun I = new RuPronoun("Я", RuCase.NOM, "1st", RuPronoun.SING, RuGender.NA);
         words.add(I);
         phrases.add(new RuPhrases("я знаю", "I know", I));
