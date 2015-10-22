@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.dfhu.rulanguage.RuLanguage;
+import org.dfhu.rulanguage.RuPhrase;
 import org.dfhu.rulanguage.RuPronoun;
 
 import java.util.Date;
@@ -23,6 +24,7 @@ public class FlashCardsFragment extends Fragment {
     private View theView;
     private static RuPronoun ruWord;
     private Boolean isFrontView = true;
+    private static RuPhrase ruPhrase;
 
     private static long nextValidClick = new Date().getTime();
 
@@ -31,7 +33,7 @@ public class FlashCardsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         theView = inflater.inflate(R.layout.flash_cards_fragment, container, false);
-        ruWord = (RuPronoun) RuLanguage.getRandomWord();
+        ruPhrase = RuLanguage.getRandomPhrase();
 
         if (savedInstanceState == null) {
             isFrontView = true;
@@ -59,7 +61,7 @@ public class FlashCardsFragment extends Fragment {
                 if (isFrontView) {
                     flipCard();
                 } else {
-                    ruWord = (RuPronoun) RuLanguage.getRandomWord();
+                    ruPhrase = RuLanguage.getRandomPhrase();
                     getChildFragmentManager()
                             .beginTransaction()
                             .replace(R.id.flashCardFragment, CardFrontFragment.getInstance())
@@ -103,7 +105,9 @@ public class FlashCardsFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             LinearLayout frameLayout = (LinearLayout) inflater.inflate(R.layout.flash_cards_front, container, false);
             TextView textView = (TextView)frameLayout.findViewById(R.id.flashCardFront);
-            textView.setText(ruWord.getWord());
+            textView.setText(ruPhrase.getWord().getWord());
+            TextView phraseView = (TextView) frameLayout.findViewById(R.id.flashCardPhrase);
+            phraseView.setText(ruPhrase.getPhrase());
             return frameLayout;
         }
     }
@@ -119,7 +123,7 @@ public class FlashCardsFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             LinearLayout frameLayout = (LinearLayout) inflater.inflate(R.layout.flash_cards_back, container, false);
             TextView textView = (TextView)frameLayout.findViewById(R.id.flashCardBack);
-            textView.setText(ruWord.getCase());
+            textView.setText(ruPhrase.getWord().getCase());
             return frameLayout;
         }
     }

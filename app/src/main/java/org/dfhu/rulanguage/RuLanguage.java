@@ -21,7 +21,7 @@ public class RuLanguage {
     public static RuPhrase getRandomPhrase () {
         setUpWordsAndPhrases();
 
-        return phrases.get((int) (Math.random() * words.size()));
+        return phrases.get((int) (Math.random() * phrases.size()));
     }
 
     /**

@@ -17,7 +17,7 @@ public class RuPhrase {
         this.english = english;
     }
 
-    public RuWord getKeyWord() {
+    public RuWord getWord() {
         return keyWord;
     }
 
