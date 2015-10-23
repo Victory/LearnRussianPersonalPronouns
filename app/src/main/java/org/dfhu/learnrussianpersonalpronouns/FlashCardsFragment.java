@@ -124,6 +124,8 @@ public class FlashCardsFragment extends Fragment {
             LinearLayout frameLayout = (LinearLayout) inflater.inflate(R.layout.flash_cards_back, container, false);
             TextView textView = (TextView)frameLayout.findViewById(R.id.flashCardBack);
             textView.setText(ruPhrase.getWord().getCase());
+            TextView translationView = (TextView) frameLayout.findViewById(R.id.flashCardTranslation);
+            translationView.setText(ruPhrase.getTranslation());
             return frameLayout;
         }
     }

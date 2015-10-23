@@ -25,7 +25,7 @@ public class RuPhrase {
         return phrase;
     }
 
-    public String getEnglish () {
+    public String getTranslation() {
         return english;
     }
 }

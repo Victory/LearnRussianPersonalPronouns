@@ -2,16 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="I am the back"
-        android:id="@+id/flashCardBack"
-        android:layout_gravity="center_horizontal"
-        android:padding="50dp"
         android:background="@color/ColorPrimaryDark"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="I am the front"
+            android:id="@+id/flashCardBack"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Translation"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:paddingBottom="30dp"
+            android:paddingTop="10dp"
+            android:id="@+id/flashCardTranslation"
+            />
+    </LinearLayout>
+
 </LinearLayout>
