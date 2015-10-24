@@ -104,8 +104,8 @@ public class FlashCardsFragment extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             LinearLayout frameLayout = (LinearLayout) inflater.inflate(R.layout.flash_cards_front, container, false);
-            TextView textView = (TextView)frameLayout.findViewById(R.id.flashCardFront);
-            textView.setText(ruPhrase.getWord().getWord());
+            TextView frontView = (TextView)frameLayout.findViewById(R.id.flashCardFront);
+            frontView.setText(ruPhrase.getWord().getWord());
             TextView phraseView = (TextView) frameLayout.findViewById(R.id.flashCardPhrase);
             phraseView.setText(ruPhrase.getPhrase());
             return frameLayout;
@@ -122,8 +122,8 @@ public class FlashCardsFragment extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             LinearLayout frameLayout = (LinearLayout) inflater.inflate(R.layout.flash_cards_back, container, false);
-            TextView textView = (TextView)frameLayout.findViewById(R.id.flashCardBack);
-            textView.setText(ruPhrase.getWord().getCase());
+            TextView frontView = (TextView)frameLayout.findViewById(R.id.flashCardBack);
+            frontView.setText(ruPhrase.getWord().getCase());
             TextView translationView = (TextView) frameLayout.findViewById(R.id.flashCardTranslation);
             translationView.setText(ruPhrase.getTranslation());
             return frameLayout;
