@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * this will be mocked with a POJO
+ * get words, phrases and language
  */
 public class RuLanguage {
     private static List<RuWord> words;
