@@ -34,17 +34,20 @@ public class RuLanguage {
 
         words = new ArrayList<>();
         phrases = new ArrayList<>();
-        RuPronoun I = new RuPronoun("Я", RuCase.NOM, "1st", RuPronoun.SING, RuGender.NA);
-        words.add(I);
-        phrases.add(new RuPhrase("я знаю", "I know", I));
-        RuPronoun toMe = new RuPronoun("Меня", RuCase.ACU, "1st", RuPronoun.SING, RuGender.NA);
-        words.add(toMe);
-        phrases.add(new RuPhrase("Мне нравится рыба", "I like fish", toMe));
+        RuPronoun tmpPronoun = new RuPronoun("Я", RuCase.NOM, "1st", RuPronoun.SING, RuGender.NA);
+        words.add(tmpPronoun);
+        phrases.add(new RuPhrase("я знаю", "I know", tmpPronoun));
+        tmpPronoun = new RuPronoun("Меня", RuCase.ACU, "1st", RuPronoun.SING, RuGender.NA);
+        words.add(tmpPronoun);
+        phrases.add(new RuPhrase("У меня есть пять яблок", "I have five apples", tmpPronoun));
 
         words.add(new RuPronoun("Меня", RuCase.GEN, "1st", RuPronoun.SING, RuGender.NA));
         words.add(new RuPronoun("Мне", RuCase.DAT, "1st", RuPronoun.SING, RuGender.NA));
         words.add(new RuPronoun("Мной", RuCase.INS, "1st", RuPronoun.SING, RuGender.NA));
-        words.add(new RuPronoun("Мне", RuCase.PRE, "1st", RuPronoun.SING, RuGender.NA));
+
+        tmpPronoun = new RuPronoun("Мне", RuCase.PRE, "1st", RuPronoun.SING, RuGender.NA);
+        words.add(tmpPronoun);
+        phrases.add(new RuPhrase("Мне нравится рыба", "I like fish", tmpPronoun));
 
         words.add(new RuPronoun("Ты", RuCase.NOM, "2nd", RuPronoun.SING_POSS, RuGender.NA));
         words.add(new RuPronoun("Тебя", RuCase.ACU, "2nd", RuPronoun.SING_POSS, RuGender.NA));
