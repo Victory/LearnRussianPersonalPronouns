@@ -14,11 +14,13 @@ import android.widget.Toast;
 
 import org.dfhu.rulanguage.RuCase;
 import org.dfhu.rulanguage.RuLanguage;
+import org.dfhu.rulanguage.RuPhrase;
 import org.dfhu.rulanguage.RuPronoun;
 
 public class WhatCaseFragment extends Fragment implements View.OnClickListener {
 
     private static RuPronoun ruWord;
+    private static RuPhrase ruPhrase;
     private static boolean foundTarget = true;
     private View theView;
 
@@ -53,17 +55,19 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
     private void setWord () {
         TextView target = (TextView) theView.findViewById(R.id.textTargetKeyword);
         target.setText(ruWord.getWord());
+        TextView targetPhrase = (TextView) theView.findViewById(R.id.textTargetPhrase);
+        targetPhrase.setText(ruPhrase.getPhrase());
     }
 
     private void setNewWord () {
-        ruWord = (RuPronoun) RuLanguage.getRandomWord();
+        ruPhrase = RuLanguage.getRandomPhrase();
+        ruWord = (RuPronoun) ruPhrase.getWord();
         setWord();
     }
 
     @Override
     public void onClick(View view) {
         foundTarget = true;
-        Log.d("tmp", "clicked a case");
         switch(view.getId()) {
             case R.id.buttonNominative:
                 foundTarget = RuCase.isCase(ruWord, RuCase.NOM);
@@ -101,6 +105,4 @@ public class WhatCaseFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getActivity(), "Sorry try again", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }
